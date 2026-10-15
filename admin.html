@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración | Sitio de demostración</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="demo-banner" role="note">
+        Sitio de demostración · datos <strong>ficticios</strong> · <a href="index.html">← Volver al sitio</a>
+    </div>
+
+    <main class="admin-main">
+
+        <div id="login-section" class="login-container">
+            <h2>Acceso Administrativo</h2>
+            <p class="demo-hint">
+                <strong>Modo demostración.</strong> Entra con <code>demo</code> / <code>demo</code> (ya están escritos).
+                En un sitio real, el acceso se verifica en el servidor, nunca en el navegador.
+            </p>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" required placeholder="Usuario" value="demo" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" required placeholder="••••••••" value="demo" autocomplete="off">
+                </div>
+                <button type="submit" class="btn-login">Entrar</button>
+            </form>
+        </div>
+
+        <div id="dashboard">
+            <div class="dashboard-header">
+                <h2>Solicitudes de Clientes</h2>
+                <div class="dashboard-actions">
+                    <button class="btn-secondary" id="btn-restablecer" type="button">Restablecer datos de ejemplo</button>
+                    <button class="btn-logout" onclick="logout()">Cerrar Sesión</button>
+                </div>
+            </div>
+            <p class="dashboard-hint">Haz clic en una fila para ver el detalle completo de la solicitud.</p>
+            <div class="tabla-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Área</th>
+                            <th>WhatsApp</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="solicitudes-body"></tbody>
+                </table>
+            </div>
+            <p id="solicitudes-vacio" class="solicitudes-vacio">Aún no hay solicitudes del Filtro Legal.</p>
+        </div>
+
+    </main>
+
+    <script src="store.js"></script>
+    <script src="admin-solicitudes.js"></script>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const loginSection = document.getElementById('login-section');
+        const dashboard = document.getElementById('dashboard');
+
+        // Demo: la verificación es solo visual. Ver el mensaje en pantalla.
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const user = document.getElementById('username').value.trim();
+            const pass = document.getElementById('password').value;
+
+            if (user === 'demo' && pass === 'demo') {
+                loginSection.style.display = 'none';
+                dashboard.style.display = 'block';
+            } else {
+                alert('En esta demo las credenciales son: usuario "demo" y contraseña "demo".');
+            }
+        });
+
+        function logout() {
+            dashboard.style.display = 'none';
+            loginSection.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,733 @@
+/* Palette: Gold (#D4AF37), Dark Gray (#333), White (#FFFFFF), Black (#000000) */
+
+:root {
+    --gold: #D4AF37;
+    --dark-gray: #333333;
+    --black: #000000;
+    --white: #FFFFFF;
+    --light-gray: #f4f4f4;
+}
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif; /* Elegant serif for luxury feel */
+    line-height: 1.6;
+    color: var(--black);
+    background-color: var(--white);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10%;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--light-gray);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('img/hero-pattern.svg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero h1, .hero p, .hero .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-bottom: 3rem;
+    color: var(--light-gray);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn {
+    padding: 1.2rem 3.5rem;
+    border: 1px solid var(--gold);
+    background-color: transparent;
+    color: var(--gold);
+    text-decoration: none;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+}
+
+.btn:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+/* Certifications & Services Sections */
+.services {
+    padding: 8rem 10%;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.services {
+    background-color: var(--white); /* Alterna con "Formación" (gris) y "Costos" (gris) */
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--black);
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.cert-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    background-color: var(--white);
+    border: 1px solid var(--gold);
+    padding: 3rem 2rem;
+    color: var(--dark-gray);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+}
+
+.cert-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    font-family: sans-serif; 
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+}
+
+/* Footer */
+footer {
+    padding: 4rem 10%;
+    background-color: var(--black);
+    color: var(--gold);
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-top: 1px solid var(--dark-gray);
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.8rem; }
+    .navbar { padding: 1.5rem 5%; }
+}
+
+/* Costos y Condiciones (index.html#costos) */
+.pricing {
+    padding: 8rem 10%;
+    background-color: var(--light-gray);
+    text-align: center;
+}
+
+.pricing h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--black);
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.pricing-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 520px;
+    padding: 3rem 2.5rem;
+    background-color: var(--white);
+    border: 1px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    color: var(--dark-gray);
+    text-align: left;
+}
+
+.pricing-card h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.pricing-price {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    color: var(--black);
+    text-align: center;
+    font-variant-numeric: lining-nums;
+}
+
+.pricing-price small { font-size: 1rem; letter-spacing: 2px; }
+
+.pricing-caption {
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-text);
+    text-align: center;
+}
+
+.pricing-card p,
+.pricing-details li {
+    font-family: sans-serif;
+    font-size: 0.95rem;
+}
+
+.pricing-card p { margin-top: 1rem; }
+
+.pricing-details { list-style: none; }
+.pricing-details li { padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+
+.pricing-list { list-style: none; }
+
+.pricing-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    font-family: sans-serif;
+    font-size: 0.95rem;
+}
+
+.pricing-list li:last-child { border-bottom: 0; }
+.pricing-list strong { white-space: nowrap; color: var(--black); }
+
+.pricing-cta { display: inline-block; margin-top: 4rem; }
+
+.btn-dark { color: var(--black); border-color: var(--black); }
+.btn-dark:hover { background-color: var(--black); color: var(--gold); }
+
+@media (max-width: 768px) {
+    .pricing { padding: 5rem 5%; }
+    .pricing h2 { font-size: 1.8rem; letter-spacing: 3px; }
+    .pricing-card { padding: 2rem 1.5rem; }
+    .pricing-list li { flex-direction: column; gap: 0.2rem; }
+}
+
+/* ==========================================================
+   Presentación: hero, Sobre mí, Formación, Contacto
+   ========================================================== */
+
+/* Cifras uniformes (Playfair por defecto usa números "antiguos": 0539 se ve como o539) */
+body { font-variant-numeric: lining-nums; }
+
+/* Dorado más oscuro para textos pequeños sobre fondo claro (el #D4AF37 se lee poco) */
+:root { --gold-text: #8A6D12; }
+
+/* Que el menú no tape el título al saltar a una sección */
+#sobre-mi, #formacion, #servicios, #costos, #contacto { scroll-margin-top: 5rem; }
+
+/* Hero: título profesional y cédula */
+.hero .hero-kicker {
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    color: var(--gold);
+}
+
+.hero h1 { font-size: 3.6rem; line-height: 1.15; }
+
+.hero .hero-credential {
+    margin-bottom: 1.2rem;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: var(--white);
+}
+
+.hero .hero-credential + p { max-width: 900px; margin-bottom: 3rem; }
+
+/* Títulos de sección compartidos */
+.about, .formation, .contact {
+    padding: 8rem 10%;
+    text-align: center;
+}
+
+.about h2, .formation h2, .contact h2 {
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.about, .contact { background-color: var(--white); }
+.formation { background-color: var(--light-gray); }
+
+/* ---------- Sobre mí ---------- */
+.about-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-profile { flex: 1 1 380px; }
+.about-experience { flex: 1 1 420px; }
+
+.about-lead {
+    margin-bottom: 2.5rem;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--dark-gray);
+}
+
+.about-facts { list-style: none; }
+
+.about-facts li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light-gray);
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+}
+
+.about-facts li span {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-text);
+}
+
+.about-experience h3,
+.formation-subtitle {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--black);
+}
+
+/* Línea de tiempo */
+.timeline {
+    list-style: none;
+    padding-left: 2rem;
+    border-left: 1px solid var(--gold);
+}
+
+.timeline li {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline li:last-child { margin-bottom: 0; }
+
+.timeline li::before {
+    content: '';
+    position: absolute;
+    left: calc(-2rem - 5px);
+    top: 0.45rem;
+    width: 9px;
+    height: 9px;
+    background-color: var(--gold);
+    border-radius: 50%;
+}
+
+.timeline h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--black);
+}
+
+.timeline .timeline-org {
+    margin: 0.2rem 0;
+    font-style: italic;
+    color: var(--black);
+}
+
+.timeline .timeline-date {
+    margin-bottom: 0.5rem;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--gold-text);
+}
+
+.timeline p {
+    font-family: sans-serif;
+    font-size: 0.92rem;
+    color: var(--dark-gray);
+}
+
+/* ---------- Formación y certificaciones ---------- */
+.formation .cert-grid { margin-bottom: 5rem; }
+
+.formation-subtitle { margin-bottom: 2rem; }
+
+.course-list {
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.course-list li {
+    display: flex;
+    gap: 2rem;
+    padding: 1.3rem 0;
+    border-bottom: 1px solid #dcdcdc;
+    font-family: sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+.course-list li:last-child { border-bottom: 0; }
+
+.course-list strong { color: var(--black); }
+
+.course-date {
+    flex: 0 0 150px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold-text);
+}
+
+/* ---------- Contacto ---------- */
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-item {
+    flex: 1;
+    min-width: 280px;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 2.5rem 1.2rem;
+    background-color: var(--white);
+    border: 1px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    color: var(--dark-gray);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+}
+
+.contact-icon { font-size: 2rem; }
+
+.contact-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-text);
+}
+
+.contact-item strong {
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    color: var(--black);
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.contact-note {
+    margin-bottom: 2rem;
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .about, .formation, .contact { padding: 5rem 5%; }
+    .about h2, .formation h2, .contact h2 { font-size: 1.8rem; letter-spacing: 3px; margin-bottom: 3rem; }
+    .about-grid { gap: 3rem; }
+    .course-list li { flex-direction: column; gap: 0.3rem; }
+    .course-date { flex: none; }
+    .course-date:empty { display: none; }
+}
+
+/* ---------- Contacto: oficina, horario y mapa ---------- */
+.contact-office:hover {
+    transform: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.contact-detail {
+    margin-top: 0.3rem;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+.contact-info {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 3rem;
+    margin-bottom: 3rem;
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+}
+
+.contact-info strong { color: var(--black); }
+
+.contact-map {
+    max-width: 1000px;
+    height: 400px;
+    margin: 0 auto 1rem;
+    border: 1px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.contact-maplink {
+    margin-bottom: 3rem;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+}
+
+.contact-maplink a { color: var(--gold-text); }
+
+@media (max-width: 768px) {
+    .contact-map { height: 300px; }
+    .contact-info { flex-direction: column; gap: 0.5rem; }
+}
+
+/* ==========================================================
+   Versión demo: banner, menú móvil, foto, mapa de ejemplo
+   ========================================================== */
+
+/* Banner superior de "sitio de demostración" */
+.demo-banner {
+    padding: 0.55rem 5%;
+    background-color: var(--gold);
+    color: var(--black);
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+}
+
+/* Foto (ilustración) en "Sobre mí" */
+.about-photo {
+    display: block;
+    width: 200px;
+    height: auto;
+    margin: 0 0 2rem;
+    border: 1px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Mapa de ejemplo (sin iframe) */
+.contact-map-demo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.contact-map-demo small { color: #777; }
+
+/* Pie de página */
+.footer-credit { margin-top: 0.6rem; opacity: 0.7; }
+.footer-admin { margin-top: 1rem; }
+.footer-admin a {
+    color: var(--gold);
+    font-size: 0.7rem;
+    text-decoration: none;
+    opacity: 0.6;
+    letter-spacing: 1px;
+}
+.footer-admin a:hover { opacity: 1; }
+
+/* Botón hamburguesa (oculto en escritorio) */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0 10px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 2px;
+    background-color: var(--black);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar.open .nav-toggle span:nth-child(2) { opacity: 0; }
+.navbar.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+    .nav-toggle { display: flex; }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: var(--white);
+        border-bottom: 1px solid var(--gold);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar.open .nav-links { display: flex; }
+
+    .nav-links li { margin: 0; border-top: 1px solid var(--light-gray); }
+    .nav-links a { display: block; padding: 1.1rem 5%; }
+
+    .hero { height: auto; min-height: 80vh; padding: 5rem 5%; }
+    .about-photo { margin-left: auto; margin-right: auto; }
+}
